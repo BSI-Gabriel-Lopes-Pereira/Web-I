@@ -3,12 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            p {
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+            }
+
+        </style>
         <title>Exercício 1</title>
     </head>
 
     <body>
-        <h1>Exercício 1</h1>
-        <p>Alô, Brasil!</p>
-        <p>Este é meu segundo documento HTML.</p>
+        <h1 id="title">Exercício 1</h1>
+        <div>
+            <p id="sub-1">Alô, Brasil!</p>
+            <p id="sub-2">Este é meu segundo documento HTML.</p>
+        </div>
     </body>
+    <script>
+        document.body.addEventListener('mousemove', function() {
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            let randomTitle = Math.floor(Math.random()*16777215).toString(16);
+            let sub = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = "#" + randomColor;
+            document.getElementById('title').style.color = "#" + randomTitle;
+            document.getElementById('sub-1').style.color = "#" + sub;
+            document.getElementById('sub-2').style.color = "#" + sub;
+        });
+    </script>
 </html>
